@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 set -e
 
-SOURCE_DIR="/Users/linzifeng/Documents/产策AI工作流/codex-skills/product-info-house"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SOURCE_DIR="$SCRIPT_DIR/codex-skills/product-info-house"
 TARGET_DIR="/Users/linzifeng/.codex/skills/product-info-house"
 
 mkdir -p "$TARGET_DIR"
