@@ -27,6 +27,23 @@ The JSON must follow the schema in `references/output_schema.md` so it can be pa
 - If the user asks for exploration or review, give a short readable summary first, then JSON.
 - If the user asks to make an image and the local generator is available, prepare generator-ready JSON first, then use the generator workflow.
 
+## Interactive Intake
+
+When the user has not provided enough structured material, guide them step by step instead of asking for a full brief at once.
+
+Default question order:
+
+1. 产品名称与版本
+2. 屋顶定位: one sentence about the desired product recognition
+3. 核心价值: why users choose it
+4. 用户价值: 2-3 user outcomes or scenarios
+5. 产品能力: 2-3 confirmed capabilities, parameters, or technologies
+6. 传播表达: 2-3 storylines, copy angles, or material needs
+7. 证据支撑: official pages, specs, samples, tests, certifications, PRD fields, or meeting confirmations
+8. 风险与待补: missing evidence, expression boundaries, legal risks, or unclear versions
+
+Ask only the next useful question. If the user says to generate now, infer conservatively from what is available and put gaps in `risks`.
+
 ## Workflow
 
 1. Read the user's material and identify the product version, target user, scene, capabilities, proof, and missing facts.
@@ -40,6 +57,19 @@ The JSON must follow the schema in `references/output_schema.md` so it can be pa
    - Foundation: evidence and risks/todos.
 4. Run the risk check before final output.
 5. Keep every claim grounded. Mark missing evidence as "待补充" or "待确认"; do not invent data.
+6. After generating, provide self-check suggestions unless the user explicitly asks for JSON only.
+
+## Self-Check Suggestions
+
+After generation, check and briefly suggest fixes for:
+
+- positioning or core value too long for a diagram
+- fewer than 2 points or more than 4 points in any pillar
+- weak or missing evidence
+- uncertain claims placed in `evidence` instead of `risks`
+- extreme words or unconditional effect promises
+- version mismatch or unclear product edition
+- missing samples, tests, certifications, or official source references
 
 ## Information Selection
 
