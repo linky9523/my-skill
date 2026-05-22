@@ -1,6 +1,6 @@
 ---
 name: product-info-house
-description: Use when product planning teammates need to turn product facts, PRDs, meeting notes, white papers, sell-point tables, launch materials, or public product pages into a product information house for internal alignment, decks, white papers, or the local generator. Produce concise Chinese positioning, core value, three pillars, evidence, risks, and generator-ready JSON.
+description: Use when product planning teammates need to turn product facts, PRDs, meeting notes, white papers, sell-point tables, launch materials, or public product pages into a product information house for internal alignment, decks, white papers, or image generation. Produce concise Chinese positioning, core value, three pillars, evidence, risks, Image2-ready prompts, and generator-ready JSON.
 ---
 
 # Product Info House
@@ -25,7 +25,8 @@ The JSON must follow the schema in `references/output_schema.md` so it can be pa
 
 - If the user asks for "JSON", "粘贴到生成器", "做图", or "只要结果", return only valid JSON inside a fenced code block.
 - If the user asks for exploration or review, give a short readable summary first, then JSON.
-- If the user asks to make an image and the local generator is available, prepare generator-ready JSON first, then use the generator workflow.
+- If the user asks to make an image, prepare the information house JSON first, then call Image2 to generate the final delivery image when Image2 is available.
+- If Image2 is not available or lacks credentials, return the JSON plus an Image2-ready prompt instead of using another image path.
 
 ## Interactive Intake
 
@@ -58,6 +59,33 @@ Ask only the next useful question. If the user says to generate now, infer conse
 4. Run the risk check before final output.
 5. Keep every claim grounded. Mark missing evidence as "待补充" or "待确认"; do not invent data.
 6. After generating, provide self-check suggestions unless the user explicitly asks for JSON only.
+
+## Image2 Generation
+
+Use Image2 for final image generation when the user asks for a delivery image, poster, diagram, or "生成图".
+
+Process:
+
+1. Build and self-check the information house JSON first.
+2. Read `references/brand_visual_oppo.md` when:
+   - the product is OPPO, OnePlus/一加 under OPPO context, or OPPO-facing work
+   - the user does not provide a color or visual direction
+   - the user asks for OPPO brand visual consistency
+3. If no color is provided, default to OPPO green and white.
+4. Call Image2 with a prompt that includes:
+   - the complete product information house content
+   - green/white OPPO visual theme unless overridden
+   - clear house structure: roof, core value, three pillars, foundation evidence, foundation risk/todo
+   - instruction to keep Chinese text legible and faithful
+   - instruction not to invent claims, parameters, certifications, awards, or extreme statements
+5. After Image2 returns the image, inspect the result conceptually:
+   - text is legible
+   - structure is still a product information house
+   - no invented claims were added
+   - default OPPO green/white style is respected
+   - risk/todo is visible but not visually dominant
+
+Do not use the local web generator as the default image path unless the user specifically asks for the local generator.
 
 ## Self-Check Suggestions
 
@@ -120,3 +148,5 @@ Before finalizing, check:
 When the user wants a generator-ready output, return only valid JSON inside a fenced code block. Do not include comments in the JSON.
 
 For stricter field rules, read `references/output_schema.md`.
+
+For OPPO/default visual rules, read `references/brand_visual_oppo.md`.
