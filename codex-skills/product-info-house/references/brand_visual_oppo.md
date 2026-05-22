@@ -19,11 +19,13 @@ Use this reference when generating OPPO-facing product information house images,
 
 ## Product Information House Layout
 
-- Horizontal information house diagram.
-- Roof: product positioning.
-- Core row: core user value.
-- Three pillars: user value, product capability, communication expression.
-- Foundation: evidence and risk/todo.
+- Horizontal information house diagram by default.
+- Follow the user's confirmed hierarchy first.
+- If the user has no hierarchy, use the default product-house layout:
+  - Roof: product positioning.
+  - Core row: core user value.
+  - Three pillars: user value, product capability, communication expression.
+  - Foundation: evidence and optional risk/todo.
 - Keep the house shape recognizable; do not turn it into a generic card grid.
 
 ## Typography And Text
@@ -45,5 +47,7 @@ Keep all Chinese text legible and faithful to the provided content.
 Do not invent product claims, parameters, certifications, awards, or extreme statements.
 Make it look like a premium product strategy deliverable, not a cartoon illustration.
 ```
+
+If the user provides a custom hierarchy, replace the default roof/core/three-pillar/foundation instruction with the user's confirmed hierarchy. If the user explicitly says no risk layer is needed, do not add a risk/todo section to the image.
 
 If the user provides a different brand or color direction, use the user's direction instead of this default.
