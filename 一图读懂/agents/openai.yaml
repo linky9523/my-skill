@@ -1,0 +1,6 @@
+interface:
+  display_name: "产品一图读懂 Excel"
+  short_description: "将产品源文件整理成海报式一图读懂表格"
+  default_prompt: "Use $product-infographic-excel to turn product source files into a poster-like 一图读懂 Excel wireframe."
+policy:
+  allow_implicit_invocation: true
