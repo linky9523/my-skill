@@ -72,7 +72,7 @@ Use this shape when the user wants the standard product planning information hou
 - `coreValue`: one user-facing value sentence, preferably under 36 Chinese characters.
 - `pillars`: exactly 3 pillars for the default house layout.
 - `pillars[].title`: default to "用户价值", "产品能力", "传播表达" unless the user requests a custom structure.
-- `pillars[].points`: 2 to 4 short points per pillar; 2 to 3 is preferred for image output.
+- `pillars[].points`: 2 to 4 short points per pillar; 2 to 3 is preferred for single-slide PPTX or image output.
 - `evidence`: 2 to 5 items.
 - `risks`: 2 to 5 items when relevant; allow an empty list if the user explicitly says no risk layer is needed.
 - `selfCheck`: include concise suggestions unless the user asks for JSON only.
@@ -81,7 +81,7 @@ Use this shape when the user wants the standard product planning information hou
 
 - Do not invent product data.
 - Put uncertain claims in `risks`, not in `evidence`.
-- Keep diagram text compact.
+- Keep slide/diagram text compact and individually editable in PPTX output.
 - Use "待补充" when evidence is missing.
 - Keep product version names consistent across the whole JSON.
 - Do not include comments, markdown, trailing commas, or extra keys in the JSON.

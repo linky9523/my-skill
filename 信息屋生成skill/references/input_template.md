@@ -21,7 +21,7 @@ Use this template when the user's source material is too loose or they ask how t
 ## Lightweight Teammate Prompt
 
 ```text
-请使用 product-info-house skill，先判断我的信息屋类型和层级是否清晰；如果清晰，就按我的层级一层层整理；如果不清晰，先给层级建议让我确认。生成后请自查，并问我要不要按建议优化。只基于资料，不编造。
+请使用 product-info-house skill，先判断我的信息屋类型和层级是否清晰；如果清晰，就按我的层级一层层整理；如果不清晰，先给层级建议让我确认。内容确认后，请先用 Image2 生成一张信息屋参考图让我确认视觉方向：仅个别文案调整可直接继续制作 PPT，结构或视觉方向大改请重新出参考图。最终请输出一份可编辑 PPT 文件。只基于资料，不编造。
 
 资料如下：
 ```
