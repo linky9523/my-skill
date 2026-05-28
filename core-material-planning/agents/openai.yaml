@@ -1,0 +1,6 @@
+interface:
+  display_name: "核心素材规划"
+  short_description: "将手机产品卖点规划成可交付的核心素材清单"
+  default_prompt: "Use $core-material-planning to turn phone product information and selling points into an Excel core material plan."
+policy:
+  allow_implicit_invocation: true
