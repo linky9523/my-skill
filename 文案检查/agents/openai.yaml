@@ -1,0 +1,4 @@
+interface:
+  display_name: "输出件规范与合规审查"
+  short_description: "为 Word 和 Excel 输出件标注文字、参数与广告合规风险"
+  default_prompt: "使用 $review-deliverable-compliance 审查这份输出件，并生成只带标注、不改正文的副本。"
