@@ -1,0 +1,6 @@
+interface:
+  display_name: "写备注skill"
+  short_description: "为官网文案表生成逐行合规备注"
+  default_prompt: "使用 $写备注skill 为官网文案表生成一一对应的必要备注。"
+policy:
+  allow_implicit_invocation: true
