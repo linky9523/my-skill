@@ -1,0 +1,6 @@
+interface:
+  display_name: "写备注"
+  short_description: "为官网文案表生成逐行合规备注"
+  default_prompt: "Use $write-remarks to add one-to-one remarks for an official website copy spreadsheet."
+policy:
+  allow_implicit_invocation: true
