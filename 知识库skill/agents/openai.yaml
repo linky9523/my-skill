@@ -1,0 +1,6 @@
+interface:
+  display_name: "知识库 Skill"
+  short_description: "为项目资料建立本地知识库，并优先基于资料回答和生成交付件"
+  default_prompt: "使用 $知识库skill 为这个项目建立或读取项目知识库，并基于已有资料回答、总结或生成交付件。"
+policy:
+  allow_implicit_invocation: true
