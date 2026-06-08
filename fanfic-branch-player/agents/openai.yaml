@@ -1,6 +1,0 @@
-interface:
-  display_name: "意难平分支剧场"
-  short_description: "将原作遗憾改写成可选择、可回溯的互动同人世界线"
-  default_prompt: "使用 $fanfic-branch-player 从我指定的意难平节点开始，创建一条可选择并可回溯的同人剧情世界线。"
-policy:
-  allow_implicit_invocation: true
