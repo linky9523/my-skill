@@ -1,0 +1,7 @@
+interface:
+  display_name: "AI低吸评分"
+  short_description: "AI主线股票与两倍ETF低吸评分工具"
+  default_prompt: "Use $ai-dip-score to score my AI stock watchlist and holdings for dip-buy setups."
+
+policy:
+  allow_implicit_invocation: true
